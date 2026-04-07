@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ధనస్రీ ఆగ్రో ఫార్మ్స్ ప్రైవేట్ లిమిటెడ్ - రెడ్ సండల్ పెంపకం</title>
+
+<style>
+
+
+
+
+
+
+/* GLOBAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;700&display=swap');
+body {
+  margin: 0;
+  font-family: 'Noto Sans Telugu', Arial, sans-serif;
+  background-color: #1e4d2b;
+  position: relative;
+  padding-top: 90px;
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 70%;
+  height: 70%;
+  background: url('pic6.jpeg') no-repeat center;
+  background-size: contain;
+  opacity: 0.05;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+
+
+html{
+  scroll-behavior: smooth;
+}
+
+/* SECTION BACKGROUND IMAGES - Changes every 5-10 sections */
+.section-bg-1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('pic6.jpeg') center/cover;
+  opacity: 0.08;
+  z-index: -1;
+}
+
+.section-bg-2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('sand1.jpg') center/cover;
+  opacity: 0.08;
+  z-index: -1;
+}
+
+.section-bg-3::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('sand5.webp') center/cover;
+  opacity: 0.08;
+  z-index: -1;
+}
+
+/* HERO SECTION */
+.hero {
+  position: relative;
+  padding: 120px 20px;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+  /* background: #1e4d2b; */
+  /* opacity:0.5; */
+}
+
+
+/* .hero::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url('pic6.jpeg') repeat;
+  background-size: 200px;
+  opacity: 0.2;
+} */
+
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+
+.hero h1 {
+  font-size: 48px;
+}
+
+
+.tagline {
+  font-size: 20px;
+}
+
+
+.hero-info {
+  margin: 0 0;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+
+.hero-info h2 {
+  color: #FFD700;
+}
+
+/* SIDE IMAGES */
+.side-img {
+  position: absolute;
+  width: 160px;
+  border-radius: 10px;
+}
+
+.left-img {
+  left: 20px;
+  top: 120px;
+}
+
+.right-img {
+  right: 20px;
+  bottom: 50px;
+}
+
+/* BUTTON */
+.cta-btn {
+  margin-top: 25px;
+  padding: 12px 25px;
+  border: none;
+  background: #FFD700;
+  color: black;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+  .side-img {
+    display: none;
+  }
+}
+
+/* FIXED HEADER */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: linear-gradient(90deg, #228B22, #32CD32, #228B22);
+  padding: 12px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(15px);
+  border-bottom: 2px solid rgba(255,215,0,0.3);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #FFD700;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px solid #FFD700;
+  object-fit: cover;
+}
+
+/* MOBILE MENU - ALWAYS VISIBLE ON MOBILE */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle { display: block; }
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    position: fixed;
+    top: 90px;
+    left: 0;
+    width: 100%;
+    background: rgba(34,139,34,0.98);
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(-100vh);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(20px);
+    padding: 20px 0;
+    margin: 0;
+  }
+  
+  nav ul.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  nav ul li {
+    width: 100%;
+    padding: 15px 0;
+    text-align: center;
+  }
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+nav ul li a:hover {
+  background: rgba(255,215,0,0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* HERO CONTENT */
+.hero h1 {
+  font-size: clamp(2.2rem, 7vw, 4.5rem);
+  background: linear-gradient(45deg, #FFD700, white);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 20px;
+  text-shadow: 0 0 20px rgba(255,215,0,0.6);
+}
+
+.tagline {
+  font-size: clamp(1.1rem, 3vw, 1.8rem);
+  color: #FFD700;
+  margin-bottom: 40px;
+  font-weight: 700;
+}
+
+/* FIXED SIDE IMAGES - NEVER OVERLAP CONTENT */
+.hero-side-images {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.side-img {
+  position: absolute;
+  width: 25vw;
+  max-width: 280px;
+  height: 65vh;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 15px;
+  filter: drop-shadow(0 10px 30px rgba(0,0,0,0.6));
+}
+
+.left-img {
+  top: 40%;
+  left: 3%;
+}
+
+.right-img {
+  top: 40%;
+  right: 3%;
+}
+
+@media (max-width: 1024px) {
+  .side-img {
+    display: none;
+  }
+}
+
+/* CTA BUTTON */
+.cta-btn {
+  padding: 18px 40px;
+  background: linear-gradient(45deg, #FFD700, #FFA500);
+  color: #1e4d2b;
+  border: none;
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px rgba(255,215,0,0.4);
+  position: relative;
+  z-index: 10;
+}
+
+.cta-btn:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 15px 35px rgba(255,215,0,0.6);
+}
+
+/* SECTIONS */
+section {
+  position: relative;
+  padding: 70px 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* .about-section { background: rgba(36,92,52,0.9); }
+.features-section { background: rgba(45,90,58,0.9); }
+
+.process-section { background: rgba(30,77,43,0.9); } */
+.gallery-section { background: rgba(3,117,51,0.9); }
+
+.about-box, .investment-details, .company-details {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(20px);
+  padding: 40px;
+  border-radius: 25px;
+  border: 1px solid rgba(255,255,255,0.2);
+  margin: 20px auto;
+  max-width: 1000px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+.about-header h2 {
+  color: #FFD700;
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 25px;
+}
+.about-header h3 {
+  color:greenyellow;
+  font-size: 1.6rem;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.about-points li {
+  margin: 12px 0;
+  padding: 15px 30px 15px 50px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 15px;
+  color: white;
+  font-size: 1.1rem;
+  position: relative;
+  transition: all 0.3s ease;
+  border-left: 5px solid #FFD700;
+}
+
+.about-points li::before {
+  content: "✨";
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #FFD700;
+  font-size: 1.2rem;
+}
+
+.about-points li:hover {
+  transform: translateX(8px);
+  background: rgba(255,215,0,0.15);
+}
+
+/* FEATURES */
+.features-section h2 {
+  text-align: center;
+  color: #FFD700;
+  font-size: 2.3rem;
+  margin-bottom: 50px;
+}
+
+.features-section p{
+  color: white;
+}
+.features-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(15px);
+  padding: 30px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.card h3 {
+  color: #FFD700;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  border-color: #FFD700;
+}
+
+/* GALLERY */
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+.gallery-section h2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  color: orange;
+}
+
+.gallery-container img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 15px;
+  border: 3px solid rgba(255,255,255,0.3);
+  transition: all 0.4s ease;
+}
+
+.gallery-container img:hover {
+  transform: translateY(-8px) scale(1.03);
+  border-color: #FFD700;
+  box-shadow: 0 15px 30px rgba(255,215,0,0.4);
+}
+
+/* PROCESS */
+
+.process-section h2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  color: orange;
+}
+.process-container {
+  max-width: 900px;
+  margin: 0 auto 50px;
+}
+
+.step {
+  background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
+  margin: 20px auto;
+  padding: 22px 35px;
+  border-radius: 40px;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+  backdrop-filter: blur(15px);
+  border: 2px solid rgba(255,255,255,0.3);
+  transition: all 0.3s ease;
+  text-align: center;
+  position: relative;
+}
+
+.step:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+  border-color: #FFD700;
+}
+
+.investment-details{
+  gap: 20px;
+}
+.investment-details h3{
+  color: orange;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.investment-details li{
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* COMPANY DETAILS */
+.company-details {
+  text-align: center;
+  color: white;
+}
+
+.company-details h2 {
+  color: #FFD700;
+  font-size: 2rem;
+  margin-bottom: 25px;
+}
+
+.company-details p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin: 15px 0;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 25px;
+  background: linear-gradient(90deg, #228B22, #32CD32);
+  color: white;
+  font-weight: 500;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  body { padding-top: 80px; }
+  
+  header { padding: 10px 5%; }
+  
+  .hero { padding: 100px 15px 60px; }
+  
+  section { padding: 50px 15px; }
+  
+  .about-box, .investment-details, .company-details {
+    padding: 25px 20px;
+    margin: 15px 10px;
+  }
+  
+  .features-container,
+  .gallery-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .step {
+    padding: 18px 25px;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 { font-size: 2rem; }
+  .cta-btn { padding: 15px 30px; }
+}
+
+#english {
+  display: none;
+}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<!-- నావ్‌బార్ -->
+<header>
+    <div class="logo">
+        <img src="pic6.jpeg" alt="DAF Logo">
+        <span>ధనశ్రీ ఆగ్రో ఫార్మ్స్</span>
+      </div>
+
+      <nav>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+      
+        <ul id="nav-links">
+          
+          <li><a href="#home">హోమ్</a></li>
+          <li><a href="#about">మా గురించి</a></li>
+          <li><a href="#features">పెట్టుబడి</a></li>
+          <li><a href="#gallery">గ్యాలరీ</a></li>
+          <li><a href="#process">ప్రక్రియ</a></li>
+          <li><a href="#contact">సంప్రదించండి</a></li>
+        </ul>
+      </nav>
+      
+</header>
+
+
+
+<section id="home" class="hero">
+    <div class="hero-content">
+  
+      <!-- Main Heading -->
+      <h1>ధనశ్రీ ఆగ్రో సండల్ ఫార్మ్స్ ప్రైవేట్ లిమిటెడ్</h1>
+      <p class="tagline">Low Investment - High Returns...</p>
+  
+      <!-- Images -->
+     
+      <img src="sand5.webp" class="side-img left-img" alt="">
+      <img src="sand1.jpg" class="side-img right-img" alt="">
+      <!-- Key Info from Poster -->
+      <div class="hero-info">
+        <h2>ధనశ్రీ ఆగ్రో ఫార్మ్స్ ప్రైవేట్ లిమిటెడ్</h2>
+  
+        <p>
+          వ్యవసాయం చేద్దాం... లాభం పొందుదాం... సరి సంపద పొందుదాం...
+        </p>
+  
+        <p>
+          ✔ ఆంధ్రప్రదేశ్ లో చట్టబద్ధ రెడ్ సండల్ పెంపకం  
+        </p>
+  
+        <p>
+          ✔ ఎర్ర చందనం చెట్లను సాగు చేద్దాం – ప్రకృతిని కాపాడుదాం  
+        </p>
+  
+        <p>
+          ✔ మీ చిన్నారుల భవిష్యత్తుకు బంగారు బాటలు వేయండి  
+        </p>
+  
+        <p>
+          ✔ తక్కువ పెట్టుబడి – దీర్ఘకాలంలో అధిక లాభాలు  
+        </p>
+      </div>
+  
+      <!-- CTA -->
+      <button class="cta-btn" onclick="scrollTo('contact')">
+        ఇప్పుడే పెట్టుబడి ప్రారంభించండి
+      </button>
+  
+    </div>
+  </section>
+
+<!-- మా గురించి -->
+<section id="about" class="about-section">
+
+  <div class="about-box">
+
+    <!-- TOP HEADER -->
+    <div class="about-header">
+      <h2>ధనశ్రీ ఆగ్రో ఫార్మ్స్ ప్రైవేట్ లిమిటెడ్</h2>
+      <h3>మా గురించి</h3>
+     
+    </div>
+
+    <!-- POINTS -->
+    <ul class="about-points">
+      <li>ఆంధ్రప్రదేశ్‌లో చట్టబద్ధంగా ఎర్ర చందనం సాగు మరియు నిర్వహణలో నిపుణులైన సంస్థ</li>
+      <li>తక్కువ పెట్టుబడితో దీర్ఘకాలంలో అధిక లాభాల ప్రాజెక్టులు</li>
+      <li>భూమి ఎంపిక నుండి పంట కోత వరకు పూర్తి మద్దతు</li>
+      <li>పారదర్శక మరియు సురక్షిత పెట్టుబడి సేవలు</li>
+      <li>ప్రకృతి పరిరక్షణ మరియు ఆర్థిక అభివృద్ధి లక్ష్యం</li>
+      <li>దేశీయ & అంతర్జాతీయ మార్కెట్ అవకాశాల ప్రణాళికలు</li>
+      <li>5+ సంవత్సరాల అనుభవం</li>
+      <li>8 విజయవంతమైన ప్రాజెక్టులు</li>
+      <li>650+ ప్లాట్లు అభివృద్ధి</li>
+    </ul>
+
+  </div>
+
+</section>
+
+<!-- సర్వీసెస్ -->
+<section id="features" class="features-section">
+
+  <h2>పెట్టుబడి ముఖ్యాంశాలు (Investment Highlights)</h2>
+
+  <div class="features-container">
+
+    <div class="card">
+      <h3>చట్టబద్ధ పెంపకం</h3>
+      <p>ఎర్ర చందనం సాగుకు పూర్తి చట్టపరమైన అనుమతులు మరియు మద్దతు.</p>
+    </div>
+
+    <div class="card">
+      <h3>పూర్తి నిర్వహణ</h3>
+      <p>భూమి ఎంపిక నుండి పంట కోత వరకు పూర్తి నిర్వహణ సేవలు.</p>
+    </div>
+
+    <div class="card">
+      <h3>ప్రతి ప్లాట్‌కు 100 మొక్కలు</h3>
+      <p>ప్రతి ప్లాట్‌లో 100 ఎర్ర చందనం మొక్కలు నాటబడతాయి.</p>
+    </div>
+
+    <div class="card">
+      <h3>డ్రిప్ ఇరిగేషన్</h3>
+      <p>ప్రతి మొక్కకు డ్రిప్ ఇరిగేషన్ సిస్టమ్ ద్వారా నీటి సరఫరా.</p>
+    </div>
+
+    <div class="card">
+      <h3>రోడ్లు & యాక్సెస్</h3>
+      <p>ప్రతి ప్లాట్‌కు అంతర్గత రోడ్లు మరియు సులభమైన యాక్సెస్ సౌకర్యం.</p>
+    </div>
+
+    <div class="card">
+      <h3>మెయిన్ రోడ్‌కు సమీపంలో</h3>
+      <p>ఫార్మ్ ప్రధాన రహదారికి చాలా దగ్గరగా ఉంటుంది.</p>
+    </div>
+
+    <div class="card">
+      <h3>భద్రతా ఫెన్సింగ్</h3>
+      <p>పూర్తి ఫార్మ్ చుట్టూ ఫెన్సింగ్ మరియు సెక్యూరిటీ.</p>
+    </div>
+
+    <div class="card">
+      <h3>ప్రవేశ ద్వారం</h3>
+      <p>ప్రధాన గేటుతో సురక్షిత ప్రవేశం.</p>
+    </div>
+
+    <div class="card">
+      <h3>రిజిస్ట్రేషన్ & డాక్యుమెంట్స్</h3>
+      <p>రిజిస్ట్రేషన్ తర్వాత అన్ని లీగల్ డాక్యుమెంట్లు అందించబడతాయి.</p>
+    </div>
+
+    <div class="card">
+      <h3>రవాణా సౌకర్యం</h3>
+      <p>ఎప్పుడైనా ఫార్మ్‌కి వెళ్లేందుకు ట్రాన్స్‌పోర్ట్ సదుపాయం.</p>
+    </div>
+
+    <div class="card">
+      <h3>ప్రకృతి వాతావరణం</h3>
+      <p>శాంతమైన మరియు అందమైన సహజ వాతావరణం.</p>
+    </div>
+
+    <div class="card">
+      <h3>10 సంవత్సరాల తర్వాత కోత</h3>
+      <p>ప్లాట్ గ్రేడ్ ఆధారంగా 10 సంవత్సరాల తర్వాత కోత మరియు ఆదాయం.</p>
+    </div>
+
+    <div class="card">
+      <h3>ఫార్మ్ హౌస్ ఆఫర్</h3>
+      <p>2 ప్లాట్లు కొనుగోలు చేసిన వారికి కోత తర్వాత ఫార్మ్ హౌస్ సదుపాయం.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- గ్యాలరీ -->
+<section id="gallery" class="gallery-section">
+
+  <h2>ఫోటో గ్యాలరీ (Photo Gallery)</h2>
+
+  <div class="gallery-container">
+
+    <img src="pic6.jpeg" alt="Company Logo">
+
+    <img src="sand1.jpg" alt="Farm View">
+
+    <img src="sand3.avif" alt="Plants">
+
+    <img src="sand2.webp" alt="Tree Growth">
+
+    <img src="red1.jpeg" alt="Red Sandalwood">
+
+  </div>
+
+</section>
+
+<!-- ప్రాసెస్ -->
+<section id="process" class="process-section">
+
+  <h2>పెట్టుబడి ప్రక్రియ</h2>
+
+  <div class="process-container">
+
+    <div class="step">1. సంప్రదింపు & సైట్ చెక్</div>
+    <div class="step">2. పెట్టుబడి ఒప్పందం</div>
+    <div class="step">3. ప్లాట్ కేటాయింపు & రిజిస్ట్రేషన్</div>
+    <div class="step">4. సాగు & నిర్వహణ (కంపెనీ ద్వారా)</div>
+    <div class="step">5. 10 సంవత్సరాల తర్వాత కోత & అమ్మకం</div>
+
+  </div>
+
+  <div class="investment-details">
+
+    <h3>ప్లాట్ వివరాలు</h3>
+
+    <ul>
+      <li>📍 ప్రతి ప్లాట్ పరిమాణం: 22 సెంట్లు</li>
+      <li>💰 ఒక్క ప్లాట్ ధర: ₹8,00,000</li>
+      <li>🌱 ప్రతి ప్లాట్‌లో 100 మొక్కలు</li>
+    </ul>
+
+    <h3>ఆదాయం (గ్రేడ్ ఆధారంగా)</h3>
+
+    <ul>
+      <li>🥇 Grade A: ₹52,00,000 వరకు</li>
+      <li>🥈 Grade B: ₹38,00,000 వరకు</li>
+      <li>🥉 Grade C: ₹21,00,000 వరకు</li>
+      <li>📜 ఈ గ్రేడ్‌లు ప్రభుత్వ నిబంధనల ప్రకారం నిర్ణయించబడతాయి</li>
+    </ul>
+
+    <h3>లాభాల పంపకం</h3>
+
+    <ul>
+      <li>👤 కస్టమర్: 60%</li>
+      <li>🏢 కంపెనీ: 40%</li>
+    </ul>
+
+    <h3>ముఖ్య గమనిక</h3>
+
+    <ul>
+      <li>✅ కస్టమర్ ఒక్కసారి ప్లాట్‌కు మాత్రమే చెల్లింపు చేయాలి</li>
+      <li>💧 నీరు, సంరక్షణ, నిర్వహణ మొత్తం కంపెనీ బాధ్యత</li>
+      <li>🌳 కోత తర్వాత భూమి కస్టమర్‌కే ఉంటుంది</li>
+    </ul>
+
+  </div>
+
+</section>
+
+<!-- కాంటాక్ట్ -->
+<div class="company-details" id="contact">
+
+  <h2>కంపెనీ వివరాలు</h2>
+
+  <p><strong>📍 చిరునామా:</strong><br>
+  Door No: 40-1-95C, Ward No: 13A,<br>
+  కన్నానగర్, మోడర్న్ సూపర్ మార్కెట్ వెనుక,<br>
+  బెంజ్ సర్కిల్, విజయవాడ – 520010
+  </p>
+
+  <p><strong>📧 ఇమెయిల్:</strong><br>
+  dhanasriagrofarmsprivatelimite@gmail.com
+  </p>
+
+</div>
+
+<!-- ఫుటర్ -->
+<footer>
+  <p>&copy; 2026 ధనశ్రీ ఆగ్రో ఫార్మ్స్ ప్రైవేట్ లిమిటెడ్ | విజయవాడ, ఆంధ్రప్రదేశ్ | తక్కువ పెట్టుబడి ఎక్కువ లాభాలు</p>
+</footer>
+
+
+
+
+<script>
+
+
+function scrollTo(id) {
+  document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+}
+
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  alert('ధన్యవాదాలు! త్క్షణం సంప్రదిస్తాము.');
+});
+
+
+document.querySelectorAll("#nav-links a").forEach(link => {
+  link.addEventListener("click", () => {
+    document.getElementById("nav-links").classList.remove("active");
+  });
+});
+function toggleMenu() {
+  document.getElementById("nav-links").classList.toggle("active");
+}
+
+
+</script>
+</body>
+</html>
